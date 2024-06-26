@@ -77,7 +77,7 @@ set_target_properties(TicTacToe_Project PROPERTIES
 
 set(DATABASE_FILE project_database.db)
 set(DATABASE_INSTALL_DIR "${CMAKE_BINARY_DIR}")  # Adjust as needed
-
+#this is a test
 add_custom_command(
     TARGET TicTacToe_Project
     POST_BUILD
