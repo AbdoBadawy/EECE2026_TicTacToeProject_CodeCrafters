@@ -46,15 +46,33 @@ jobs:
 
     - name: Configure CMake
       shell: pwsh
-      run: cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_PREFIX_PATH="C:\Qt\5.15.2\mingw81_64" -DSQLITE3_INCLUDE_DIR="$env:SQLITE3_INCLUDE_DIR" -DSQLITE3_LIBRARY="$env:SQLITE3_LIBRARY"
+      run: |
+        cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_PREFIX_PATH="C:\Qt\5.15.2\mingw81_64" -DSQLITE3_INCLUDE_DIR="$env:SQLITE3_INCLUDE_DIR" -DSQLITE3_LIBRARY="$env:SQLITE3_LIBRARY"
 
     - name: Build
       shell: pwsh
-      run: cmake --build build --config ${{env.BUILD_TYPE}}
+      run: |
+        cmake --build build --config ${{env.BUILD_TYPE}}
+
+    - name: List build directory
+      shell: pwsh
+      run: |
+        Get-ChildItem -Recurse -Path build
 
     - name: Ensure database file is present
       shell: pwsh
-      run: dir project_database.db
+      run: |
+        if (!(Test-Path -Path project_database.db)) { Write-Error "Database file not found" }
+
+    - name: Run executable
+      shell: pwsh
+      run: |
+        $executable = ".\build\path\to\your\executable\my-project.exe"
+        if (Test-Path -Path $executable) {
+          &$executable
+        } else {
+          Write-Error "Executable not found: $executable"
+        }
 
     - name: Upload executable
       uses: actions/upload-artifact@v2
