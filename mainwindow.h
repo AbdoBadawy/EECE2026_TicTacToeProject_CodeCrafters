@@ -32,6 +32,8 @@ private slots:
 
     void on_actionAbout_us_triggered();
 
+    void on_mainTabs_currentChanged(int index);
+
 private:
     Ui::MainWindow *ui;
 };

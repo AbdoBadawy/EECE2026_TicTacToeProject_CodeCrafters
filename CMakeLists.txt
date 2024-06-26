@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(TicTacToe_Project VERSION 0.1 LANGUAGES CXX)
+project(TicTacToe_Project VERSION 0.1 LANGUAGES C CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -13,6 +13,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
+#find_package(SQLite3 REQUIRED)
+
 
 set(PROJECT_SOURCES
         main.cpp
@@ -22,8 +24,19 @@ set(PROJECT_SOURCES
         loginwindow.h
         loginwindow.cpp
         loginwindow.ui
-	tictactoeboard.cpp
-	tictactoeboard.h
+        tictactoeboard.cpp
+        tictactoeboard.h
+        historypage.h
+        historypage.cpp
+        historypage.ui
+        sqlite3.h
+        sqlite3ext.h
+        sqlite3.c
+        database_interface.cpp
+        database_interface.h
+        md5.cpp
+        md5.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -44,10 +57,12 @@ else()
 #    set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
     else()
         add_executable(TicTacToe_Project
-            ${PROJECT_SOURCES} tictactoeboard.h tictactoeboard.cpp
+            ${PROJECT_SOURCES} sqlite3.c
         )
     endif()
 endif()
+
+#target_link_libraries(TicTacToe_Project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets sqlite3)
 
 target_link_libraries(TicTacToe_Project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 

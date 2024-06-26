@@ -21,6 +21,7 @@ public:
     bool ai_mod=false;
     bool gameLocked=true;
     int board[3][3] = {0};
+    bool justReset = false;
 
 signals:
     void scoreUpdate();
@@ -31,7 +32,6 @@ private:
     int evaluate();
     int minimax(bool isMax,int depth);
     int findBestMove();
-
 
 
 };
