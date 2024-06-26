@@ -76,6 +76,17 @@ set_target_properties(TicTacToe_Project PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+set(DATABASE_FILE project_database.db)
+set(DATABASE_INSTALL_DIR "${CMAKE_BINARY_DIR}")  # Adjust as needed
+#this is a test
+add_custom_command(
+    TARGET TicTacToe_Project
+    POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy
+    "${CMAKE_CURRENT_SOURCE_DIR}/${DATABASE_FILE}"
+    "${DATABASE_INSTALL_DIR}/${DATABASE_FILE}"
+)
+
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(TicTacToe_Project)
 endif()
