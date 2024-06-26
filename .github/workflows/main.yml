@@ -56,6 +56,10 @@ jobs:
       shell: pwsh
       run: dir project_database.db
 
+    - name: Run executable
+      shell: pwsh
+      run: .\build\path\to\your\executable\my-project.exe
+
     - name: Upload executable
       uses: actions/upload-artifact@v2
       with:
