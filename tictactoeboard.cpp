@@ -1,4 +1,6 @@
 #include "tictactoeboard.h"
+#include "database_interface.h"
+extern std::string username;
 
 TicTacToeBoard::TicTacToeBoard(QWidget *parent)
     : QWidget{parent}
@@ -22,6 +24,7 @@ TicTacToeBoard::TicTacToeBoard(QWidget *parent)
     }
 
 void TicTacToeBoard::handleButtonClick(QPushButton *button, int row, int col) {
+    std::vector<int> board_buffer;
     if(gameLocked) return; //Do nothing if game is locked
     if (board[row][col] == 0) {
         // Board [0 2 0
@@ -43,14 +46,38 @@ void TicTacToeBoard::handleButtonClick(QPushButton *button, int row, int col) {
             QMessageBox::information(this, "Game Over", QString("Player %1 wins!").arg(currentPlayer));
            // QMessageBox::information(this, "Total Scores:", QString("Player 1: %1\nPlayer 2: %2").arg(player1Score).arg(player2Score));
             emit scoreUpdate();
-            resetBoard();
-            // Save
+            // Save into database
+            for(int i =0 ; i< 3 ;i++)
+                for(int j =0 ; j< 3 ;j++)
+                    board_buffer.push_back(board[i][j]);
+            board_buffer.push_back(ai_mod);
+            board_buffer.push_back(player1Score);
+            board_buffer.push_back(player2Score);
+            for(auto it=board_buffer.begin();it<board_buffer.end();it++)
+                std::cout << *it << endl;
+            history_insert(username,board_buffer);
+            justReset = false; //To indicate this a valid game
+
+            resetBoard(); // Last Thing
         } else if (checkDraw()) {
             QMessageBox::information(this, "Game Over", "It's a draw!");
             //QMessageBox::information(this, "Total Scores:", QString("Player 1: %1\nPlayer 2: %2").arg(player1Score).arg(player2Score));
             emit scoreUpdate();
-            resetBoard();
-            //save
+
+            // Save into database
+            for(int i =0 ; i< 3 ;i++)
+                for(int j =0 ; j< 3 ;j++)
+                    board_buffer.push_back(board[i][j]);
+            board_buffer.push_back(ai_mod);
+            board_buffer.push_back(player1Score);
+            board_buffer.push_back(player2Score);
+            for(auto it=board_buffer.begin();it<board_buffer.end();it++)
+                std::cout << *it << endl;
+            history_insert(username,board_buffer);
+            justReset = false; //To indicate this a valid game
+
+            resetBoard(); // Last Thing
+
         } else {
             if(ai_mod)
             {

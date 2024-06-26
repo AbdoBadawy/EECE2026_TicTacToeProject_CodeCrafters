@@ -1,0 +1,5 @@
+/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/CMakeFiles/TicTacToe_Project.dir
+/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/CMakeFiles/edit_cache.dir
+/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/CMakeFiles/rebuild_cache.dir
+/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/CMakeFiles/TicTacToe_Project_autogen_timestamp_deps.dir
+/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/CMakeFiles/TicTacToe_Project_autogen.dir

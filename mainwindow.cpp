@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include <iostream>
 #include "./ui_mainwindow.h"
-
+#include "database_interface.h"
+extern std::string username;
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -77,6 +78,14 @@ void MainWindow::on_pushButton_2_clicked()
         emit ui->XO_Board->scoreUpdate();
         ui->XO_Board->resetBoard();
 
+        // Send all  3 to database
+        if(ui->XO_Board->justReset) {
+            return; // Don't save in database
+        }
+        std::vector<int> board_buffer= {3,3,3,3,3,3,3,3,3,3,3,3};
+        history_insert(username,board_buffer);
+        ui->XO_Board->justReset = true; //To indicate this a reset
+
     }
     else if(msg.clickedButton()== multi)
     {
@@ -93,6 +102,14 @@ void MainWindow::on_pushButton_2_clicked()
         ui->XO_Board->player2Score =0;
         emit ui->XO_Board->scoreUpdate();
         ui->XO_Board->resetBoard();
+
+        // Send all  3 to database
+        if(ui->XO_Board->justReset) {
+            return; // Don't save in database
+        }
+        std::vector<int> board_buffer= {3,3,3,3,3,3,3,3,3,3,3,3};
+        history_insert(username,board_buffer);
+        ui->XO_Board->justReset = true; //To indicate this a reset
     }
 }
 
@@ -113,3 +130,11 @@ void MainWindow::on_actionAbout_us_triggered()
     QMessageBox::information(this,"About us","Github repo Here");
 }
 
+void MainWindow::on_mainTabs_currentChanged(int index)
+{
+    if(index != 2)
+        return;
+    ui->widget->initState();
+    ui->widget->getNumberGamesFromDataBase(username); //for now
+    ui->widget->updateHistoryList();
+}

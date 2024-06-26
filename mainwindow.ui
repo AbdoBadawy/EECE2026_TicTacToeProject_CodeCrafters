@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="mainTabs">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="profileTab">
        <attribute name="title">
@@ -149,6 +149,11 @@
        <attribute name="title">
         <string>Histoy</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="HistoryPage" name="widget" native="true"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -211,6 +216,15 @@
    <slots>
     <signal>scoreUpdate()</signal>
     <slot>resetBoard()</slot>
+   </slots>
+  </customwidget>
+  <customwidget>
+   <class>HistoryPage</class>
+   <extends>QWidget</extends>
+   <header location="global">historypage.h</header>
+   <container>1</container>
+   <slots>
+    <slot>InitState()</slot>
    </slots>
   </customwidget>
  </customwidgets>
