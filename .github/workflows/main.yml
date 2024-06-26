@@ -1,0 +1,56 @@
+name: CMake on a single platform
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  BUILD_TYPE: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: '5.15.2'
+        host: windows
+        target: desktop
+        dir: C:\Qt
+
+    - name: Install dependencies
+      run: |
+        choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
+        choco install ninja
+
+
+
+    - name: Set SQLite environment variables
+      shell: pwsh
+      run: |
+        $env:SQLITE3_INCLUDE_DIR="${{github.workspace}}"
+        $env:SQLITE3_LIBRARY="${{github.workspace}}\sqlite3.dll"
+
+    - name: Remove previous build directory
+      shell: pwsh
+      run: |
+        if (Test-Path -Path build) {
+          Remove-Item -Recurse -Force build
+        }
+
+    - name: Configure CMake
+      shell: pwsh
+      run: cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_PREFIX_PATH="C:\Qt\5.15.2\msvc2019_64" -DSQLITE3_INCLUDE_DIR="$env:SQLITE3_INCLUDE_DIR" -DSQLITE3_LIBRARY="$env:SQLITE3_LIBRARY"
+
+    - name: Build
+      run: cmake --build build --config ${{env.BUILD_TYPE}}
+
+    - name: Ensure database file is present
+      run: dir project_database.db
