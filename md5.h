@@ -21,3 +21,4 @@ unsigned* Algorithms_Hash_MD5(const char *msg, int mlen);
 const char* GetMD5String(const char *msg, int mlen);
 
 #endif // MD5_H
+

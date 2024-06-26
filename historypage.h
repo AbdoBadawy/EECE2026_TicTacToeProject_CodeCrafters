@@ -43,9 +43,7 @@ public:
     ~HistoryPage();
 
 private slots:
-    void on_stackedWidget_currentChanged(int arg1);
 
-    void on_stackedBoards_currentChanged(int arg1);
 
     void on_historyList_itemDoubleClicked(QListWidgetItem *item);
 
