@@ -52,9 +52,23 @@ jobs:
       shell: pwsh
       run: cmake --build build --config ${{env.BUILD_TYPE}}
 
+    - name: List build directory
+      shell: pwsh
+      run: Get-ChildItem -Recurse -Path build
+
     - name: Ensure database file is present
       shell: pwsh
-      run: dir project_database.db
+      run: if (!(Test-Path -Path project_database.db)) { Write-Error "Database file not found" }
+
+    - name: Run executable
+      shell: pwsh
+      run: |
+        $executable = ".\build\path\to\your\executable\my-project.exe"
+        if (Test-Path -Path $executable) {
+          &$executable
+        } else {
+          Write-Error "Executable not found: $executable"
+        }
 
     - name: Upload executable
       uses: actions/upload-artifact@v2
