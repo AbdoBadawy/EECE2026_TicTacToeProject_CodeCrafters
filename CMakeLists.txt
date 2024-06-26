@@ -37,6 +37,9 @@ set(PROJECT_SOURCES
         database_interface.h
         md5.cpp
         md5.h
+        signup.cpp
+        signup.ui
+        signup.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

@@ -26,6 +26,8 @@ void MainWindow::startLoginWindow()
         emit ui->XO_Board->scoreUpdate();
         ui->XO_Board->resetBoard();
         ui->XO_Board->gameLocked = true;
+        ui->mainTabs->setCurrentIndex(0);
+
     }
     else //Closing
     {

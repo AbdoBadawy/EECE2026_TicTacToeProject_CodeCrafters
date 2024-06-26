@@ -3,7 +3,7 @@
 
 #include <QApplication>
 #include <string>
-std::string username="abdo"; // remove this when including login !! include it in all files like this : extern std::string username
+std::string username; // remove this when including login !! include it in all files like this : extern std::string username
 
 int main(int argc, char *argv[])
 {

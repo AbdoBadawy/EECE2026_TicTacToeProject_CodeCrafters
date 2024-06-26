@@ -3,6 +3,8 @@
 #include "database_interface.h"
 #include <iostream>
 #include"signup.h"
+extern std::string username;
+
 LoginWindow::LoginWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::LoginWindow)
@@ -30,7 +32,7 @@ void LoginWindow::on_pushButton_clicked()
 
             this->hide();
             this->done(Accepted);
-
+            ::username=username;
         }
         else
             ui->label_check->setText("username and password are not correct");

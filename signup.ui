@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Register Window</string>
   </property>
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>Register</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -44,7 +44,11 @@
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="lineEdit_Password_1"/>
+     <widget class="QLineEdit" name="lineEdit_Password_1">
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+     </widget>
     </item>
     <item>
      <widget class="QLabel" name="label_Age_1">
