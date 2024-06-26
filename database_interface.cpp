@@ -10,7 +10,7 @@ bool signUp(const std::string& username, const std::string& password) {
     sqlite3_stmt* stmt;
     int rc;
 
-    rc = sqlite3_open("project_database.db", &db);
+    rc = sqlite3_open("C:/Users/user/OneDrive/Desktop/TicTacToe_Project/TicTacToe_Project/TicTacToe_Project/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/project_database", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return false;
@@ -68,7 +68,7 @@ bool login(const std::string& username, const std::string& password) {
     sqlite3_stmt* stmt;
     int rc;
 
-    rc = sqlite3_open("project_database.db", &db);
+    rc = sqlite3_open("C:/Users/user/OneDrive/Desktop/database_interface_encryption_included&&draws/database_interface/project_database.db", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return false;
@@ -160,7 +160,7 @@ return the_final_reslut;
 
 void history_insert(const std::string& username,  std::vector<int>& history_x) {
     sqlite3* db;
-    int rc = sqlite3_open("project_database.db", &db);
+    int rc = sqlite3_open("C:/Users/user/OneDrive/Desktop/database_interface_encryption_included&&draws/database_interface/project_database.db", &db);
 
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
@@ -539,7 +539,7 @@ bool signUp(const std::string& username, const std::string& password, const std:
     sqlite3_stmt* stmt;
     int rc;
 
-    rc = sqlite3_open("project_database.db", &db);
+    rc = sqlite3_open("C:/Users/user/OneDrive/Desktop/database_interface_encryption_included&&draws/database_interface/project_database.db", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return false;

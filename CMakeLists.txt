@@ -43,6 +43,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TicTacToe_Project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        signup.h signup.cpp signup.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TicTacToe_Project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -73,17 +74,6 @@ set_target_properties(TicTacToe_Project PROPERTIES
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
-)
-
-set(DATABASE_FILE project_database.db)
-set(DATABASE_INSTALL_DIR "${CMAKE_BINARY_DIR}")  # Adjust as needed
-
-add_custom_command(
-    TARGET TicTacToe_Project
-    POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy
-    "${CMAKE_CURRENT_SOURCE_DIR}/${DATABASE_FILE}"
-    "${DATABASE_INSTALL_DIR}/${DATABASE_FILE}"
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
