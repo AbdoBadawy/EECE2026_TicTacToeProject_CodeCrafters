@@ -81,7 +81,7 @@ set(DATABASE_INSTALL_DIR "${CMAKE_BINARY_DIR}")  # Adjust as needed
 add_custom_command(
     TARGET TicTacToe_Project
     POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E rename
+    COMMAND ${CMAKE_COMMAND} -E copy
     "${CMAKE_CURRENT_SOURCE_DIR}/${DATABASE_FILE}"
     "${DATABASE_INSTALL_DIR}/${DATABASE_FILE}"
 )
