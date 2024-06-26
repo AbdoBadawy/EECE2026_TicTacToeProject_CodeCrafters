@@ -32,11 +32,11 @@ set(PROJECT_SOURCES
         sqlite3.h
         sqlite3ext.h
         sqlite3.c
+
         database_interface.cpp
         database_interface.h
         md5.cpp
         md5.h
-
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -65,6 +65,7 @@ endif()
 #target_link_libraries(TicTacToe_Project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets sqlite3)
 
 target_link_libraries(TicTacToe_Project PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+
 
 set_target_properties(TicTacToe_Project PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

@@ -49,6 +49,7 @@ void HistoryPage::getNumberGamesFromDataBase(const std::string& username)
         if(*i==3) historyTotalGames++;
     }
    // std::cout<<"Total number of games= "<<historyTotalGames<<std::endl;
+
 }
 // Get All games from
 // This funtion only pulls data from the data base
@@ -62,6 +63,7 @@ void HistoryPage::updateHistoryList()
     {
         sprintf(item_name,"Game %d",i);
       //  std::cout<< item_name<<std::endl;
+
         ui->historyList->addItem(QString(item_name));
         *item_name=0;
     }
@@ -104,6 +106,7 @@ void HistoryPage::getGameFromVectorBuffer(int historyItem)
                  game.gameBoard.board[i][j]=0;
         updateBoardView();
         updateGameView();
+
         return;
     }
     game.num = historyTotalGames - historyItem; // ensure proper number
@@ -119,6 +122,7 @@ void HistoryPage::getGameFromVectorBuffer(int historyItem)
         {
          game.gameBoard.board[i][j] = *(itr-11+i*3+j);
        //  std::cout<< game.gameBoard.board[i][j] << std::endl;
+
         }
     }
     game.player1Score = *(itr-(board_number-1)*12-1);
@@ -128,6 +132,7 @@ void HistoryPage::getGameFromVectorBuffer(int historyItem)
     //std::cout << "game.numberBoards = "<< game.numberBoards <<std::endl;
     //std::cout << "game.player1Score = " << game.player1Score  <<std::endl ;
     //std::cout << "game.player2Score " << game.player2Score <<std::endl;
+
 }// Parse the game and update gameBoard
 /*
  * Game in database:
@@ -224,6 +229,7 @@ void ViewBoard::paintEvent(QPaintEvent *event)
 void HistoryPage::on_historyList_itemDoubleClicked(QListWidgetItem *item)
 {
    // std::cout<< ui->historyList->row(item) <<std::endl;
+
     getGameFromVectorBuffer(ui->historyList->row(item));
     updateBoardView();
     updateGameView();
@@ -244,6 +250,7 @@ void HistoryPage::on_nextBoardButton_clicked()
         {
          game.gameBoard.board[i][j] = *(game.gameBoard.boardPointer+i*3+j);
          //std::cout<< game.gameBoard.board[i][j] << std::endl;
+
         }
     }
     updateBoardView();
@@ -264,9 +271,11 @@ void HistoryPage::on_perviousBoardButton_clicked()
         {
          game.gameBoard.board[i][j] = *(game.gameBoard.boardPointer+i*3+j);
          //std::cout<< game.gameBoard.board[i][j] << std::endl;
+
         }
     }
     updateBoardView();
 }
+
 
 

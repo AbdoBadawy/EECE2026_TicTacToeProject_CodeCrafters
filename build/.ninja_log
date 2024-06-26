@@ -1,0 +1,11 @@
+# ninja log v5
+0	3553	1719268978201709981	TicTacToe_Project_autogen/timestamp	e600b2d5b8e2fe22
+0	3553	1719268978201709981	/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/TicTacToe_Project_autogen/timestamp	e600b2d5b8e2fe22
+3553	16246	1719268990961709757	CMakeFiles/TicTacToe_Project.dir/TicTacToe_Project_autogen/mocs_compilation.cpp.o	88c1c0e8402cdb49
+0	3553	1719268978201709981	TicTacToe_Project_autogen/mocs_compilation.cpp	e600b2d5b8e2fe22
+0	3553	1719268978201709981	/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build/TicTacToe_Project_autogen/mocs_compilation.cpp	e600b2d5b8e2fe22
+27613	29360	1719269004057709527	TicTacToe_Project	db54d2041cab901a
+3566	16161	1719268990873709758	CMakeFiles/TicTacToe_Project.dir/main.cpp.o	c66c86a26922dd6
+3573	17900	1719268992609709728	CMakeFiles/TicTacToe_Project.dir/mainwindow.cpp.o	6319a576760cac9d
+16247	27179	1719269001893709565	CMakeFiles/TicTacToe_Project.dir/tictactoeboard.cpp.o	f117e883a3c42159
+16163	27613	1719269002325709557	CMakeFiles/TicTacToe_Project.dir/loginwindow.cpp.o	6f3f939c8f238ba1

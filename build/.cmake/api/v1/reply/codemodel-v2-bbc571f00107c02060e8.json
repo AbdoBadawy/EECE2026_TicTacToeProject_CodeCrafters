@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "TicTacToe_Project",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "TicTacToe_Project::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TicTacToe_Project-Debug-00dc544833549385c0f5.json",
+					"name" : "TicTacToe_Project",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TicTacToe_Project_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TicTacToe_Project_autogen-Debug-d09172556c112c8b7de3.json",
+					"name" : "TicTacToe_Project_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "TicTacToe_Project_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-TicTacToe_Project_autogen_timestamp_deps-Debug-d182f0201f1a7cabb288.json",
+					"name" : "TicTacToe_Project_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project/build",
+		"source" : "/home/abdo/material/second_year/second_term/Embedded/project_2/UI/TicTacToe_Project"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

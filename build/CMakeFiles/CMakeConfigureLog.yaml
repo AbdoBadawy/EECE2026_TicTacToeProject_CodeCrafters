@@ -1,0 +1,88 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: C:/MinGW/bin/c++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/3.28.0-msvc1/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-4t53aw"
+      binary: "C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-4t53aw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-4t53aw'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/WinAVR-20100110/utils/bin/make.exe -f Makefile cmTC_66756/fast
+        C:/WinAVR-20100110/utils/bin/make.exe  -f CMakeFiles/cmTC_66756.dir/build.make CMakeFiles/cmTC_66756.dir/build
+        make.exe[1]: Entering directory `C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-4t53aw'
+        make.exe[1]: *** [CMakeFiles/cmTC_66756.dir/CMakeCXXCompilerABI.cpp.obj] Error -1073741502
+        make.exe[1]: Leaving directory `C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-4t53aw'
+        make.exe: *** [cmTC_66756/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:49 (try_compile)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Check for working CXX compiler: C:/MinGW/bin/c++.exe"
+    directories:
+      source: "C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-7kl0oj"
+      binary: "C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-7kl0oj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_COMPILER_WORKS"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-7kl0oj'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/bin/cmake.exe" -E env VERBOSE=1 C:/WinAVR-20100110/utils/bin/make.exe -f Makefile cmTC_1328a/fast
+        C:/WinAVR-20100110/utils/bin/make.exe  -f CMakeFiles/cmTC_1328a.dir/build.make CMakeFiles/cmTC_1328a.dir/build
+        make.exe[1]: Entering directory `C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-7kl0oj'
+        make.exe[1]: *** [CMakeFiles/cmTC_1328a.dir/testCXXCompiler.cxx.obj] Error -1073741502
+        make.exe[1]: Leaving directory `C:/Users/Mahmoud/Desktop/git_learn/TicTacToe_Project/build/CMakeFiles/CMakeScratch/TryCompile-7kl0oj'
+        make.exe: *** [cmTC_1328a/fast] Error 2
+        
+      exitCode: 2
+...
