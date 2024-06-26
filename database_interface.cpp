@@ -10,7 +10,7 @@ bool signUp(const std::string& username, const std::string& password) {
     sqlite3_stmt* stmt;
     int rc;
 
-    rc = sqlite3_open("../TicTacToe_Project/project_database.db", &db);
+    rc = sqlite3_open("project_database.db", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return false;

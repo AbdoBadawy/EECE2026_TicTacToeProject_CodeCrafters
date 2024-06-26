@@ -1,3 +1,6 @@
 build/
 .vscode/
 project_database.db
+TicTacToe_Project_autogen
+TicTacToe_Project
+Makefile
