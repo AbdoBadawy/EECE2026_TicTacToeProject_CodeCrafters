@@ -30,8 +30,8 @@ private:
     QPushButton *buttons[3][3];
     int currentPlayer = 1;
     int evaluate();
-    int minimax(bool isMax,int depth);
-    int findBestMove();
+	int minimax(bool isMax,int depth,int alpha,int beta);
+	int findBestMove();
 
 
 };
