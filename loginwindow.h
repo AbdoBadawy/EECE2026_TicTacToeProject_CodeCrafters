@@ -20,6 +20,8 @@ private slots:
     void on_pushButton_clicked();
     void on_LoginWindow_finished(int result);
 
+    void on_pushButton_2_clicked();
+
 private:
     Ui::LoginWindow *ui;
 };
