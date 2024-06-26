@@ -24,13 +24,15 @@ jobs:
         host: windows
         target: desktop
         dir: C:\Qt
+        arch: 'win64_mingw81'
 
     - name: Install dependencies
       run: |
         choco install cmake --installargs 'ADD_CMAKE_TO_PATH=System'
         choco install ninja
 
-
+    - name: Set up SQLite
+      uses: actions/setup-sqlite@v1
 
     - name: Set SQLite environment variables
       shell: pwsh
@@ -47,10 +49,12 @@ jobs:
 
     - name: Configure CMake
       shell: pwsh
-      run: cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_PREFIX_PATH="C:\Qt\5.15.2\msvc2019_64" -DSQLITE3_INCLUDE_DIR="$env:SQLITE3_INCLUDE_DIR" -DSQLITE3_LIBRARY="$env:SQLITE3_LIBRARY"
+      run: cmake -B build -G "Ninja" -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DCMAKE_PREFIX_PATH="C:\Qt\5.15.2\mingw81_64" -DSQLITE3_INCLUDE_DIR="$env:SQLITE3_INCLUDE_DIR" -DSQLITE3_LIBRARY="$env:SQLITE3_LIBRARY"
 
     - name: Build
+      shell: pwsh
       run: cmake --build build --config ${{env.BUILD_TYPE}}
 
     - name: Ensure database file is present
+      shell: pwsh
       run: dir project_database.db
