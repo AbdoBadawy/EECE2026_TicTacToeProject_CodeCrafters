@@ -10,7 +10,7 @@ bool signUp(const std::string& username, const std::string& password) {
     sqlite3_stmt* stmt;
     int rc;
 
-    rc = sqlite3_open("project_database.db", &db);
+    rc = sqlite3_open("project_database", &db);
     if (rc) {
         std::cerr << "Can't open database: " << sqlite3_errmsg(db) << std::endl;
         return false;
@@ -136,21 +136,21 @@ std::vector<std::string> get_history(const std::string& username) {
     return result;
 }
 vector<int> get_history_int(string username){
-vector<int>the_final_reslut ;
-vector<string >s=get_history(username);
+    vector<int>the_final_reslut ;
+    vector<string >s=get_history(username);
 
-for(int i=0;i<s.size();i++){
- for(int j=0;j<s[i].size();j++){
-    int  x=s[i][j]-'0';
-     the_final_reslut.push_back(x);
-  }
-}
+    for(int i=0;i<s.size();i++){
+        for(int j=0;j<s[i].size();j++){
+            int  x=s[i][j]-'0';
+            the_final_reslut.push_back(x);
+        }
+    }
 
-if(the_final_reslut.size()%12!=0){
-    the_final_reslut.pop_back();
-}
+    if(the_final_reslut.size()%12!=0){
+        the_final_reslut.pop_back();
+    }
 
-return the_final_reslut;
+    return the_final_reslut;
 
 }
 

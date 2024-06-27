@@ -24,6 +24,13 @@
        <attribute name="title">
         <string>Profile</string>
        </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout_8">
+        <item>
+         <widget class="profile" name="widget_2" native="true">
+          <layout class="QVBoxLayout" name="verticalLayout_4"/>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="gameTab">
        <attribute name="title">
@@ -165,7 +172,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFIle">
@@ -226,6 +233,12 @@
    <slots>
     <slot>InitState()</slot>
    </slots>
+  </customwidget>
+  <customwidget>
+   <class>profile</class>
+   <extends>QWidget</extends>
+   <header location="global">profile1.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

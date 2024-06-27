@@ -40,13 +40,18 @@ set(PROJECT_SOURCES
         signup.cpp
         signup.ui
         signup.h
+        signup.h
+        signup.cpp
+        signup.ui
+        profile1.h
+        profile1.cpp
+        profile.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TicTacToe_Project
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
-        signup.h signup.cpp signup.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TicTacToe_Project APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
