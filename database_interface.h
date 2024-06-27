@@ -13,6 +13,7 @@ std::string get_phone(const std::string& username);
 int get_wins(const std::string& username);
 int get_loses(const std::string& username);
 void update_loses(const std::string& username, int new_loses);
+void update_wins(const std::string& username, int new_wins);
 bool get_gender(const std::string& username);
 void update_draws(const std::string& username, int new_draws);
 int get_draws(const std::string& username);

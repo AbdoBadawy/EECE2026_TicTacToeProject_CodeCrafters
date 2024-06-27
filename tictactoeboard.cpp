@@ -38,10 +38,12 @@ void TicTacToeBoard::handleButtonClick(QPushButton *button, int row, int col) {
             if (currentPlayer == 1)
             {
                 player1Score++;
+				update_wins(username,1);
             }
             else
             {
                 player2Score++;
+				update_loses(username,1);
             }
             QMessageBox::information(this, "Game Over", QString("Player %1 wins!").arg(currentPlayer));
            // QMessageBox::information(this, "Total Scores:", QString("Player 1: %1\nPlayer 2: %2").arg(player1Score).arg(player2Score));
@@ -71,6 +73,7 @@ void TicTacToeBoard::handleButtonClick(QPushButton *button, int row, int col) {
             board_buffer.push_back(player2Score);
             history_insert(username,board_buffer);
             justReset = false; //To indicate this a valid game
+			update_draws(username,1);
 
             resetBoard(); // Last Thing
 
