@@ -28,12 +28,11 @@ void profile::on_pushButton_clicked()
     }
     else{ gender_local="Female";}
     QString Rank_local;
-    if((get_loses(username))>=(get_draws(username))){
+    if((get_loses(username))>=(get_wins(username))){
         Rank_local="begginer";}
-    if((get_loses(username))<(get_draws(username))){
+    if((get_loses(username))==(get_wins(username))){
         Rank_local="good";}
-    if((get_loses(username))<(get_draws(username))*2){
-        Rank_local="Legend";}
+    else Rank_local="Legend";
 
 
 
