@@ -67,7 +67,7 @@ jobs:
     - name: Run executable
       shell: pwsh
       run: |
-        $executable = ".\build\my-project.exe"
+        $executable = ".\build\TicTacToe_Project.exe"
         if (Test-Path -Path $executable) {
           &$executable
         } else {
@@ -78,4 +78,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: my-executable
-        path: build\my-project.exe
+        path: build\TicTacToe_Project.exe
