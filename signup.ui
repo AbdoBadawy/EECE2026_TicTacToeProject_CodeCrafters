@@ -29,7 +29,7 @@
     <item>
      <widget class="QLabel" name="label">
       <property name="text">
-       <string>UserName</string>
+       <string>Username</string>
       </property>
      </widget>
     </item>
@@ -71,21 +71,29 @@
      <widget class="QLineEdit" name="lineEdit_Phone"/>
     </item>
     <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string>Gender</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="label_4">
-      <property name="text">
-       <string>Enter 1 for male ,0 for female</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="lineEdit_Gender"/>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Gender</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton">
+        <property name="text">
+         <string>male</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_2">
+        <property name="text">
+         <string>female</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QPushButton" name="pushButton_SignUp">

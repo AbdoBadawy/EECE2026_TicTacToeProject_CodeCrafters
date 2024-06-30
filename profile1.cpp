@@ -14,7 +14,7 @@ profile::~profile()
     delete ui;
 }
 
-void profile::on_pushButton_clicked()
+void profile::updateProfile()
 {
     QString Age_local=QString::fromStdString(get_age(username));
     QString Username_local=QString::fromStdString(username);
@@ -28,9 +28,9 @@ void profile::on_pushButton_clicked()
     }
     else{ gender_local="Female";}
     QString Rank_local;
-    if((get_loses(username))>=(get_wins(username))){
+    if((get_loses(username))> (get_wins(username))){
         Rank_local="begginer";}
-    if((get_loses(username))==(get_wins(username))){
+    else if((get_loses(username))==(get_wins(username))){
         Rank_local="good";}
     else Rank_local="Legend";
 

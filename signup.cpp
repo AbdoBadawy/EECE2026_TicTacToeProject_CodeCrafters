@@ -24,7 +24,10 @@ void signup::on_pushButton_SignUp_clicked()
     Password= ui->lineEdit_Password_1->text();
     Phone= ui->lineEdit_Phone->text();
     Age=ui->lineEdit_Age->text().toInt();
-    Gender=ui->lineEdit_Gender->text().toInt();
+    if(ui->radioButton->isChecked())
+        Gender = 1; //male
+    else if (ui->radioButton_2-> isChecked())
+        Gender = 0; //female
 
     std::string username=UserName.toStdString();
     std::string password=Password.toStdString();

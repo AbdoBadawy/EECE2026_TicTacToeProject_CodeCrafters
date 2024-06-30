@@ -26,7 +26,7 @@ void MainWindow::startLoginWindow()
         emit ui->XO_Board->scoreUpdate();
         ui->XO_Board->resetBoard();
         ui->XO_Board->gameLocked = true;
-        ui->mainTabs->setCurrentIndex(0);
+        emit ui->mainTabs->currentChanged(0);
 
     }
     else //Closing
@@ -98,6 +98,7 @@ void MainWindow::on_pushButton_2_clicked()
         ui->modText->setText("2 Players mode");
         ui->XO_Board->gameLocked = false;
 
+
         //Reseting Game
 
         ui->XO_Board->player1Score =0;
@@ -129,11 +130,13 @@ void MainWindow::on_actionAbout_QT_triggered()
 
 void MainWindow::on_actionAbout_us_triggered()
 {
-    QMessageBox::information(this,"About us","Github repo Here");
+    QMessageBox::information(this,"About us","<a href=\"https://github.com/AbdoBadawy/EECE2026_TicTacToeProject_CodeCrafters.git\">GitHub repo</a>");
 }
 
 void MainWindow::on_mainTabs_currentChanged(int index)
 {
+    if(index == 0)
+        ui->widget_2->updateProfile();
     if(index != 2)
         return;
     ui->widget->initState();

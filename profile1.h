@@ -13,10 +13,9 @@ class profile : public QWidget
 
 public:
     explicit profile(QWidget *parent = nullptr);
+    void updateProfile();
     ~profile();
 
-private slots:
-    void on_pushButton_clicked();
 
 private:
     Ui::profile *ui;
