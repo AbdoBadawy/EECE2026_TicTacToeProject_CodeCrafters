@@ -3,3 +3,4 @@ build/
 TicTacToe_Project_autogen
 TicTacToe_Project
 Makefile
+project_database.db
